@@ -7,5 +7,8 @@ HTML, Javascript, Bootstrap, Node.js, express, Heroku
 ## Acknowledgement
 Thanks to the instructors and teaching assistants at Columbia Univeristy Coding Bootcamp.
 
+Heroku version deployed after reading
+https://medium.freecodecamp.org/how-to-deploy-a-nodejs-app-to-heroku-from-github-without-installing-heroku-on-your-machine-433bec770efe
+
 ## License
 MIT 
