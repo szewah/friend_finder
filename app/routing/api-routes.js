@@ -10,7 +10,6 @@ module.exports = function(app) {
         //grab the results
         let newFriendInput = req.body;
         let newFriendResults = req.body.surveyResults;
-        //store best match data
 
         //logic from angrbrd ===START====
        //https://github.com/angrbrd/friend-finder/blob/master/app/routing/apiRoutes.js 
@@ -22,19 +21,20 @@ module.exports = function(app) {
             let scoreDiff = 0;
             //work out the differences between the results
             for (var i = 0; i < newFriendResults.length; i++) {
-                scoreDiff += Math.abs(parseInt(friendsList[j].surveyResults[i]))- 
-                parseInt(newFriendResults[i]);
+                scoreDiff += Math.abs(parseInt(friendsList[j].surveyResults[i])- 
+                newFriendResults[i]);
             }
-            console.log("Difference is " + scoreDiff);
             if (scoreDiff < matchScore) {
+                matchscore = scoreDiff;
+                // console.log(matchName = friendsList[i].name)
                 matchName = friendsList[i].name;
                 matchImage = friendsList[i].image;
-                matchscore = scoreDiff;
             }
         };
         // logic from angrbrd ===END====
         //add new friend input to the friendsList
         friendsList.push(newFriendInput);
+
         // send response message
         res.status(200).json({name: matchName, image: matchImage})
     });
