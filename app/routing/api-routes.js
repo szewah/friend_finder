@@ -16,7 +16,7 @@ module.exports = function(app) {
        //https://github.com/angrbrd/friend-finder/blob/master/app/routing/apiRoutes.js 
         let matchName = "";
         let matchImage = "";
-        let matchScore = "200";
+        let matchScore = 100;
         // loop through all existing friends
         for (var j = 0; j < friendsList.length; j++) {
             let scoreDiff = 0;
@@ -35,7 +35,7 @@ module.exports = function(app) {
         // logic from angrbrd ===END====
         //add new friend input to the friendsList
         friendsList.push(newFriendInput);
-        //send response message
+        // send response message
         res.status(200).json({name: matchName, image: matchImage})
     });
 };
