@@ -13,6 +13,7 @@
   "author": "szewah",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.3.3",
     "express": "^4.16.4"
   }
 }

@@ -1,11 +1,11 @@
 let resultsData = [
     {
         "name":"Ahmed",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "image":"http://taylorjonesphoto.com/wp-content/uploads/2015/06/natural-light-portraits-tacoma-portrait-photographer38-200x300.jpg",
         "surveyResults":[
             5,
-            1
-            // 4,
+            1,
+            4
             // 4,
             // 5,
             // 1,
@@ -16,12 +16,60 @@ let resultsData = [
             ]
         },
     {
-        "name":"Zarah",
-        "photo":"https://i1.wp.com/digital-photography-school.com/wp-content/uploads/2011/07/outdoor-portraits-1.jpg?resize=2000%2C1160&ssl=1",
+        "name":"Zara",
+        "image":"https://i.pinimg.com/originals/e1/04/19/e10419a22a794cd54a8353e299942916.jpg",
         "surveyResults":[
             1,
-            2
+            4,
+            5
+            // 4,
+            // 5,
+            // 1,
+            // 2,
             // 3,
+            // 3,
+            // 2
+            ]
+        },
+    {
+        "name":"Zach",
+        "image":"http://www.hagopsphotography.com/wp-content/uploads/2018/05/Med-school-application-200x300.jpg",
+        "surveyResults":[
+            1,
+            2,
+            3
+            // 4,
+            // 5,
+            // 1,
+            // 2,
+            // 3,
+            // 3,
+            // 2
+            ]
+        },
+    {
+        "name":"Jill",
+        "image":"https://static.showit.co/200/-U5mO3fvRmuiVIJ5WLroDA/68856/cw3a6944p.jpg",
+        "surveyResults":[
+            4,
+            5,
+            5
+            // 4,
+            // 5,
+            // 1,
+            // 2,
+            // 3,
+            // 3,
+            // 2
+            ]
+        },
+    {
+        "name":"John",
+        "image":"https://i.pinimg.com/236x/dc/b9/d2/dcb9d238228109bbf5cdde05b091a5bd--men-over--mads-mikkelsen.jpg",
+        "surveyResults":[
+            2,
+            2,
+            2
             // 4,
             // 5,
             // 1,

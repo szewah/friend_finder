@@ -1,4 +1,5 @@
 var friendsList = require("../data/friend");
+var colors = require("colors");
 
 module.exports = function(app) {
     //display a JSON of all possible friends.
@@ -6,27 +7,35 @@ module.exports = function(app) {
         res.json(friendsList);
     });
     app.post("/api/friends", function(req, res) {
-        //push the newFriend into the friendsList
-        friendsList.push(req.body);
         //grab the results
-        let newFriend = req.body.surveyResults;
-        console.log(newFriend);
-        //create a new array to store the string numeric results
-        let scoreArray = [];
-        let friendCount = 0;
-        let bestMatch = 0;
-        // iterate over the length of the friends list
+        let newFriendInput = req.body;
+        let newFriendResults = req.body.surveyResults;
+        //store best match data
+
+        //logic from angrbrd ===START====
+       //https://github.com/angrbrd/friend-finder/blob/master/app/routing/apiRoutes.js 
+        let matchName = "";
+        let matchImage = "";
+        let matchScore = "200";
+        // loop through all existing friends
         for (var j = 0; j < friendsList.length; j++) {
             let scoreDiff = 0;
-            // then iterate over the surveyResults to compare
-            for (var i = 0; i < newFriend.length; i++) {
-                scoreDiff += (Math.abs(parseInt(friendsList[j].surveyResults[i])- 
-                parseInt(newFriend[i])
-                ));
-                scoreArray.push(scoreDiff);
+            //work out the differences between the results
+            for (var i = 0; i < newFriendResults.length; i++) {
+                scoreDiff += Math.abs(parseInt(friendsList[j].surveyResults[i]))- 
+                parseInt(newFriendResults[i]);
             }
-            //find the best match
-
+            console.log("Difference is " + scoreDiff);
+            if (scoreDiff < matchScore) {
+                matchName = friendsList[i].name;
+                matchImage = friendsList[i].image;
+                matchscore = scoreDiff;
+            }
         };
-    })
+        // logic from angrbrd ===END====
+        //add new friend input to the friendsList
+        friendsList.push(newFriendInput);
+        //send response message
+        res.status(200).json({name: matchName, image: matchImage})
+    });
 };
