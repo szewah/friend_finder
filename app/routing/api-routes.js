@@ -13,9 +13,9 @@ module.exports = function(app) {
 
         //logic from angrbrd ===START====
        //https://github.com/angrbrd/friend-finder/blob/master/app/routing/apiRoutes.js 
+        let matchScore = 100;
         let matchName = "";
         let matchImage = "";
-        let matchScore = 100;
         // loop through all existing friends
         for (var j = 0; j < friendsList.length; j++) {
             let scoreDiff = 0;
@@ -25,10 +25,10 @@ module.exports = function(app) {
                 newFriendResults[i]);
             }
             if (scoreDiff < matchScore) {
-                matchscore = scoreDiff;
+                matchScore = scoreDiff;
                 // console.log(matchName = friendsList[i].name)
-                matchName = friendsList[i].name;
-                matchImage = friendsList[i].image;
+                matchName = friendsList[j].name;
+                matchImage = friendsList[j].image;
             }
         };
         // logic from angrbrd ===END====
